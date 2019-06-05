@@ -20,7 +20,7 @@ class GetNews:
     def __init__(self):
         #创建文件夹
         global path
-        path="./百度新闻爬取/"
+        path="./baidunew/"
         if not os.path.exists(path):
             os.mkdir(path)
         self.path=path
@@ -65,7 +65,7 @@ for pn in range(0,560,20):
     pachong=GetNews()
     pachong.requests_get(url)
     pachong.get_msg()
-with open(path+"百度新闻信息.csv","a",newline="",encoding="gb18030") as fp:
+with open(path+"baidunews.csv","a",newline="",encoding="gb18030") as fp:
     write=csv.writer(fp)
     a=1
     for msg in details:
